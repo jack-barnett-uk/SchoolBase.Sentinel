@@ -21,6 +21,7 @@ namespace SchoolBase.Sentinel
 
         /* Areas of the SB API */
         public ActivitiesArea Activities;
+        public TagsArea Tags;
 
         public SchoolBaseClient(string urlOverride = "https://schoolbase.online")
         {
@@ -28,6 +29,7 @@ namespace SchoolBase.Sentinel
             _sbInstallURL = urlOverride;
 
             Activities = new ActivitiesArea(this);
+            Tags = new TagsArea(this);
         }
 
         public static SchoolBaseClient WithTokenAndDomain(string token, string domain, string urlOverride = "https://schoolbase.online")
@@ -47,6 +49,7 @@ namespace SchoolBase.Sentinel
             _token = token;
             DefaultParameters.Add(new Parameter("x-schoolbase-token", _token, ParameterType.HttpHeader));
         }
+
         public void SetDomain(string domain)
         {
             _domain = domain;

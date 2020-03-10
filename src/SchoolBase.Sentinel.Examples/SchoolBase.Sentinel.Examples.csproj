@@ -55,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SchoolBase.Sentinel.Enums\SchoolBase.Sentinel.Enums.csproj">
+      <Project>{9661D44A-5401-46C1-B975-EF7D2FD72B45}</Project>
+      <Name>SchoolBase.Sentinel.Enums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SchoolBase.Sentinel\SchoolBase.Sentinel.csproj">
       <Project>{bb08a253-eeb3-4dee-acc1-d32fcc69f2b9}</Project>
       <Name>SchoolBase.Sentinel</Name>

@@ -10,9 +10,9 @@ namespace SchoolBase.Sentinel.Examples
         {
             var client = SchoolBaseClient.WithTokenAndDomain("", "");
 
-            var activities = await client.Activities.GetEventDetailsList();
+            var tags = await client.Tags.GetTagDetails();
 
-            Console.WriteLine(activities.FirstOrDefault().EventName);
+            Console.WriteLine(tags.FirstOrDefault().Description);
             Console.ReadLine();
 
             return 0;

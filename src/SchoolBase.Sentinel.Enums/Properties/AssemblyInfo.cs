@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SchoolBase.Sentinel.Enums")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Enums package for SchoolBase.Sentinel")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jack Barnett")]
 [assembly: AssemblyProduct("SchoolBase.Sentinel.Enums")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

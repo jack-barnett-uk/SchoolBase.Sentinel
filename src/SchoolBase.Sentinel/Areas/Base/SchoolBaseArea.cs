@@ -14,18 +14,19 @@ namespace SchoolBase.Sentinel.Areas.Base
     public class SchoolBaseArea
     {
         internal SchoolBaseClient _client;
+        internal Dictionary<string, Version> _endpointVersions = new Dictionary<string, Version>();
 
         public SchoolBaseArea(SchoolBaseClient client)
         {
             _client = client;
         }
 
-        internal async Task<T> MakePostRequest<T>(string endpoint, Dictionary<string, object> parameters)
+        internal async Task<T> MakePostRequest<T>(string endpoint, Dictionary<string, object> parameters = null)
         {
             return await MakeRequest<T>(endpoint, Method.POST, parameters);
         }
 
-        internal async Task<T> MakeGetRequest<T>(string endpoint, Dictionary<string, object> parameters)
+        internal async Task<T> MakeGetRequest<T>(string endpoint, Dictionary<string, object> parameters = null)
         {
             return await MakeRequest<T>(endpoint, Method.GET, parameters);
         }
@@ -38,19 +39,27 @@ namespace SchoolBase.Sentinel.Areas.Base
                 throw new NotAvailableException(endpoint, _client.GetSBVersion());
             }
 
-            var request = new RestRequest(endpoint, method);
-
-            foreach (var parameter in parameters)
+            if(!AvailableInCallingMethod(endpoint))
             {
-                // Dont add it if its null,the model binder on SBO's end is a bit dodgy.
-                //if (parameter.Value == null)
-                //{
-                //    continue;
-                //}
-
-                request.AddParameter(parameter.Key, parameter.Value);
+                throw new NotAvailableException(endpoint, _client.GetSBVersion());
             }
 
+            var request = new RestRequest(endpoint, method);
+
+            if(parameters != null)
+            {
+                foreach (var parameter in parameters)
+                {
+                    // Dont add it if its null,the model binder on SBO's end is a bit dodgy.
+                    //if (parameter.Value == null)
+                    //{
+                    //    continue;
+                    //}
+
+                    request.AddParameter(parameter.Key, parameter.Value);
+                }
+            }
+            
             var response = await _client.ExecuteAsync<T>(request);
 
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -66,6 +75,18 @@ namespace SchoolBase.Sentinel.Areas.Base
             }
 
             throw new Exception(response.Content);
+        }
+
+        private bool AvailableInCallingMethod(string endpoint)
+        {
+            if(!_endpointVersions.TryGetValue(endpoint, out var requiredVersion))
+            {
+                return true;
+            }
+           
+            var connectedVersion = _client.GetSBVersion();
+
+            return connectedVersion >= requiredVersion;
         }
 
         private bool AvailableInAreaVersion()

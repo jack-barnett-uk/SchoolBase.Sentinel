@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SchoolBase.Sentinel</id>
+    <version>1.0.1</version>
+    <title>SchoolBase.Sentinel</title>
+    <authors>Jack Barnett</authors>
+    <owners>Jack Barnett</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/jack-barnett-uk/SchoolBase.Sentinel</projectUrl>
+    <description>An unofficial .NET API Wrapper for Furlong SchoolBase and Maestro.</description>
+    <releaseNotes>Add missing dependencies.</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>SchoolBase API Wrapper Maestro Furlong</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+		<dependency id="Newtonsoft.Json" version="12.0.3" />
+		<dependency id="RestSharp" version="106.10.1" />
+		<dependency id="HtmlAgilityPack" version="1.11.21" />
+	  </group>
+    </dependencies>
+    <language>en-GB</language>
+    <repository type="git" url="https://github.com/jack-barnett-uk/SchoolBase.Sentinel.git" branch="master" commit="462806dd18e38f0cd78042dd0806b031476a2f46"></repository>
+    <summary>An unofficial .NET API Wrapper for Furlong SchoolBase and Maestro.</summary>
+  </metadata>
+</package>

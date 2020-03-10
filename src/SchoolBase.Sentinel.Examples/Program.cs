@@ -8,11 +8,11 @@ namespace SchoolBase.Sentinel.Examples
     {
         static async Task<int> Main(string[] args)
         {
-            var client = SchoolBaseClient.WithTokenAndDomain("", "");
+            var client = SchoolBaseClient.WithTokenAndDomain(args[0], args[1]);
 
-            var tags = await client.Tags.GetTagDetails();
+            var pupilTag = await client.School.GetTagTypes();
 
-            Console.WriteLine(tags.FirstOrDefault().Description);
+            Console.WriteLine(pupilTag.FirstOrDefault().description);
             Console.ReadLine();
 
             return 0;

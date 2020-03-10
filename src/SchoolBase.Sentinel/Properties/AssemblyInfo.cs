@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SchoolBase.Sentinel")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An unofficial .NET API wrapper for Furlong SchoolBase and Maestro")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jack Barnett")]
 [assembly: AssemblyProduct("SchoolBase.Sentinel")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

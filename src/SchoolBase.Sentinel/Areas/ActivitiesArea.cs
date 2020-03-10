@@ -1,6 +1,5 @@
 ﻿using SchoolBase.Sentinel.Areas.Base;
 using System.Collections.Generic;
-using RestSharp;
 using SchoolBase.Sentinel.Models;
 using System.Threading.Tasks;
 using SchoolBase.Sentinel.Attributes;

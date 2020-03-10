@@ -31,15 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlAgilityPack, Version=1.11.21.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.11.21\lib\Net45\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -53,24 +44,34 @@
   <ItemGroup>
     <Compile Include="Areas\ActivitiesArea.cs" />
     <Compile Include="Areas\Base\SchoolBaseArea.cs" />
+    <Compile Include="Areas\SchoolArea.cs" />
     <Compile Include="Areas\TagsArea.cs" />
     <Compile Include="Attributes\MinimumVersionAttribute.cs" />
     <Compile Include="Exceptions\NotAvailableException.cs" />
     <Compile Include="Models\ActivityBasicDetails.cs" />
     <Compile Include="Models\BadRequestModel.cs" />
     <Compile Include="Models\EventDetails.cs" />
+    <Compile Include="Models\ReferenceData.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="SchoolBaseClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SchoolBase.Sentinel.Enums\SchoolBase.Sentinel.Enums.csproj">
       <Project>{9661D44A-5401-46C1-B975-EF7D2FD72B45}</Project>
       <Name>SchoolBase.Sentinel.Enums</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.21</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>106.10.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

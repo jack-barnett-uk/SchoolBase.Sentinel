@@ -12,7 +12,7 @@ namespace SchoolBase.Sentinel
         private const string SCHOOLBASE_API_URL = "/api/Public";
 
         private readonly Version SENTINEL_SUPPORTED_VERSION = new Version(2020, 2, 2);
-        private string _sbInstallURL = "https://schoolbase.online";
+        private readonly string _sbInstallURL = "https://schoolbase.online";
         private string _token;
         private string _domain;
 
@@ -22,6 +22,7 @@ namespace SchoolBase.Sentinel
         /* Areas of the SB API */
         public ActivitiesArea Activities;
         public TagsArea Tags;
+        public SchoolArea School;
 
         public SchoolBaseClient(string urlOverride = "https://schoolbase.online")
         {
@@ -30,6 +31,7 @@ namespace SchoolBase.Sentinel
 
             Activities = new ActivitiesArea(this);
             Tags = new TagsArea(this);
+            School = new SchoolArea(this);
         }
 
         public static SchoolBaseClient WithTokenAndDomain(string token, string domain, string urlOverride = "https://schoolbase.online")

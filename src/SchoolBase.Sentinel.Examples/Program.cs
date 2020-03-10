@@ -1,7 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace SchoolBase.Sentinel.Console
+namespace SchoolBase.Sentinel.Examples
 {
     class Program
     {
@@ -11,8 +12,8 @@ namespace SchoolBase.Sentinel.Console
 
             var activities = await client.Activities.GetEventDetailsList();
 
-            System.Console.WriteLine(activities.FirstOrDefault().EventName);
-            System.Console.ReadLine();
+            Console.WriteLine(activities.FirstOrDefault().EventName);
+            Console.ReadLine();
 
             return 0;
         }

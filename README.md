@@ -1,2 +1,2 @@
 # SchoolBase.Sentinel
-A .NET wrapper for the SchoolBase API
+An unofficial .NET API Wrapper for Furlong SchoolBase and Maestro.

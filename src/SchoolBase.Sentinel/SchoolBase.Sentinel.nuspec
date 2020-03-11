@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>SchoolBase.Sentinel</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <title>SchoolBase.Sentinel</title>
     <authors>Jack Barnett</authors>
     <owners>Jack Barnett</owners>
@@ -10,7 +10,7 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/jack-barnett-uk/SchoolBase.Sentinel</projectUrl>
     <description>An unofficial .NET API Wrapper for Furlong SchoolBase and Maestro.</description>
-    <releaseNotes>Add missing dependencies.</releaseNotes>
+    <releaseNotes>Implement 2020.3.1 tag changes</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>SchoolBase API Wrapper Maestro Furlong</tags>
     <dependencies>
